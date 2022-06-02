@@ -321,10 +321,10 @@ def normalize(nmea=sys.stdin,
       report_error(inst)
 
   if buffers:
-    for bfs_slots in buffers.values():
-      origstr = bfs_slots[0]['origline']
-      tagblock, line = parseTagBlock(origstr)
-      yield tagblock, line, origstr
+#     for bfs_slots in buffers.values():
+#       origstr = bfs_slots[0]['origline']
+#       tagblock, line = parseTagBlock(origstr)
+#       yield tagblock, line, origstr
     report_error(UnfinishedMessagesError(buffers=buffers))
 
 
