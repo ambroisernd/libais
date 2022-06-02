@@ -148,12 +148,12 @@ def add_error_to_stats(e, stats):
 def normalize(nmea=sys.stdin,
               uscg=True,
               validate_checksum=True,
-              allow_unknown=False,
+              allow_unknown=True,
               window=2,
               ignore_tagblock_station=False,
               treat_ab_equal=False,
               pass_invalid_checksums=False,
-              allow_missing_timestamps=False,
+              allow_missing_timestamps=True,
               errorcb=ErrorPrinter,
               stats=None,
               **kw):
@@ -230,8 +230,12 @@ def normalize(nmea=sys.stdin,
       if station is None and tagblock_station is None:
         report_error(NoStationFoundError(line_num=stats["line_num"], line=line.strip()))
         continue
+      try:
+        bufferSlot = (tagblock['tagblock_group']['id'], fields[3])  # seqId and Channel make a unique stream ##
+        # Ambroise Renaud
 
-      bufferSlot = (tagblock_station, station, fields[3])  # seqId and Channel make a unique stream
+      except KeyError:
+        bufferSlot = (fields[3],)
 
       if not treat_ab_equal:
         bufferSlot += (fields[4],)  # channel id
@@ -317,6 +321,10 @@ def normalize(nmea=sys.stdin,
       report_error(inst)
 
   if buffers:
+    for bfs_slots in buffers.values():
+      origstr = bfs_slots[0]['origline']
+      tagblock, line = parseTagBlock(origstr)
+      yield tagblock, line, origstr
     report_error(UnfinishedMessagesError(buffers=buffers))
 
 
