@@ -139,7 +139,7 @@ def add_error_to_stats(e, stats):
   stats["error_num_total"] += 1
   if "error_num" not in stats:
      stats["error_num"] = {}
-  name = getattr(e, "description", getattr(e, "message", str(type(e))))
+  name = str(e)
   if name not in stats["error_num"]:
      stats["error_num"][name] = 0
   stats["error_num"][name] += 1
