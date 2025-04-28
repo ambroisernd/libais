@@ -98,8 +98,8 @@ _ais_sample_ :
 ```
 
 Running _example.py_ :
-```
-$ python example.py ais_sample
+```bash
+python example.py ais_sample
 ```
 
 Output on console:
