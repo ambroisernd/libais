@@ -84,7 +84,7 @@ The variable _msg_ contains a dictionary with parsed AIS message fields.
 
 
 ### Example:
-An implementation example is given in _example.py_.
+An implementation example is given in _example/example.py_.
 
 _ais_sample_ :
 ```
