@@ -39,6 +39,12 @@ except KeyError:
 
 ## Installation
 
+> ⚠️ **Important:** Before installing, make sure to uninstall any previously installed versions of `libais` to avoid conflicts.
+
+```bash
+pip uninstall libais
+```
+
 1. Install the required Python packaging tools:
     ```bash
     pip install setuptools build
@@ -118,6 +124,6 @@ Output on console:
 {'id': 5, 'repeat_indicator': 0, 'mmsi': 808664168, 'ais_version': 0, 'imo_num': 707800168, 'callsign': '3D$<2((', 'name': '30(<30(<30(<30(<30(<', 'type_and_cargo': 54, 'dim_a': 51, 'dim_b': 51, 'dim_c': 51, 'dim_d': 51, 'fix_type': 8, 'eta_month': 0, 'eta_day': 0, 'eta_hour': 0, 'eta_minute': 0, 'draught': 6.900000095367432, 'destination': '0(<0,4*45MJ@@@@@@@@*', 'dte': 0, 'spare': 0, 'tagblock_group': {'sentence': 1, 'groupsize': 2, 'id': 820068246}, 'tagblock_station': '3031', 'tagblock_timestamp': 1653429872}
 ```
 ## Used By
-This project is used by Mines Paris CRC (https://www.crc.mines-paristech.fr/fr/).
+This project is used by Mines Paris CRC (https://www.crc.mines-paristech.fr/fr/). Mainly used for my phd thesis at the lab.
 ## Authors
 * Ambroise Renaud (ambroise.renaud@minesparis.psl.eu)
