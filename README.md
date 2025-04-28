@@ -39,8 +39,6 @@ except KeyError:
 
 ## Installation
 
-## Installation
-
 1. Install the required Python packaging tools:
     ```bash
     pip install setuptools build
