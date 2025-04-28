@@ -1,7 +1,7 @@
 # libais for Mines Paris and AISHub.net NMEA 4.10 data
 
 This project is a modified version of [libais](https://github.com/schwehr/libais).
-Following modifications were made so it can parse NMEA and NMEA 4.10 data from the [CRC local antenna](https://www.aishub.net/stations/2954) and from the [AISHub](https://www.aishub.net) feed:
+Following modifications were made so it can parse NMEA and NMEA 4.10 data from the [AIS reception device of Mines Paris at Sophia Antipolis](https://www.aishub.net/stations/2954) and from the [AISHub](https://www.aishub.net) feed:
 
 * Allow messages without station (\s field in NMEA 4.10 tag).
 * Allow messages without timestamp (\c field in NMEA 4.10 tag).
