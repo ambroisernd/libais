@@ -39,10 +39,35 @@ except KeyError:
 
 ## Installation
 
-```
-$ python setup.py build
-$ python setup.py install
-```
+## Installation
+
+1. Install the required Python packaging tools:
+    ```bash
+    pip install setuptools build
+    ```
+
+2. Install Python development headers (needed for compilation):
+    ```bash
+    sudo apt install python3-dev
+    ```
+
+3. Build the package:
+    ```bash
+    python -m build
+    ```
+
+4. Install the package:
+    ```bash
+    pip install dist/*.whl
+    ```
+
+---
+
+## Notes
+- Make sure you are using the correct Python version (e.g., Python 3.12).
+- If you are working inside a virtual environment (`venv`), activate it first.
+- Avoid using `python setup.py install`, as it is deprecated and no longer supported.
+
 
 ## Usage/Examples
 
