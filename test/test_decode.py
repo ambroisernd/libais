@@ -18,7 +18,7 @@ class AisTopLevelDecoders(unittest.TestCase):
     for entry in test_data.top_level:
       body = ''.join([line.split(',')[5] for line in entry['nmea']])
       pad = int(entry['nmea'][-1].split('*')[0][-1])
-      msg = ais.decode(body, pad)
+      msg = ais_crc.decode(body, pad)
       expected = entry['result']
       if msg.keys() != expected.keys():
         sys.stderr.write('key mismatch: %s\n' % set(msg).symmetric_difference(set(expected)))
