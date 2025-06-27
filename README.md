@@ -8,13 +8,15 @@ Following modifications were made so it can parse NMEA and NMEA 4.10 data from t
 * Allow messages without timestamp (\c field in NMEA 4.10 tag).
 * Group multi-part messages by field \g in NMEA 4.10 tag and sequence ID.
 In the original libais code, multi-part messages were grouped using the tuple (\s field in NMEA 4.10 tag, AIS sequence ID) (2954,7 in the following exemple).
+* Renamed module from `ais` to `ais_crc`
+* Renamed package from `libais` to `libais_crc`
 
 The reason for these changes is that multi-part messages does not have these fields in there tagblock except for the first one. Example:
 ```
 \g:1-2-22890,c:1659589714,s:2954*52\!AIVDM,2,1,7,B,55Uilt800000cQW?O7Lnpbq@4dpn22222222220e3`;525wVN3l3lU80hCU3,0*20
 \g:2-2-22890*46\!AIVDM,2,2,7,B,s0hCSQDp880,2*7E
 ```
-The modified code is the following (in _ais/stream/\_\_init\_\_.py_):
+The modified code is the following (in _ais_crc/stream/\_\_init\_\_.py_):
 
 ```python
 def normalize(...
@@ -38,12 +40,6 @@ except KeyError:
 
 
 ## Installation
-
-> ⚠️ **Important:** Before installing, make sure to uninstall any previously installed versions of `libais` to avoid conflicts.
-
-```bash
-pip uninstall libais
-```
 
 1. Install the required Python packaging tools:
     ```bash
@@ -78,9 +74,9 @@ pip uninstall libais
 ### Usage
 To parse a file containing NMEA messages, the following code can be used:
 ```python
-import ais.stream
+import ais_crc.stream
 with open("ais_sample") as f:
-    	for msg in ais.stream.decode(f):
+    	for msg in ais_crc.stream.decode(f):
             print(msg)
 ```
 The variable _msg_ contains a dictionary with parsed AIS message fields.

@@ -2,7 +2,7 @@
 """Tests for ais.util."""
 
 import unittest
-from ais import util
+from ais_crc import util
 import six
 
 

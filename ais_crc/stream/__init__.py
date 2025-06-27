@@ -4,8 +4,8 @@ import sys
 import traceback
 import warnings
 
-import ais
-from ais.stream import checksum
+import ais_crc
+from ais_crc.stream import checksum
 
 warnings.warn(
   "The stream module is deprecated and will be removed in 1.0",
@@ -346,7 +346,7 @@ def decode(nmea=sys.stdin,
     try:
       body = ''.join(line.split(',')[5])
       pad = int(line.split('*')[0][-1])
-      res = ais.decode(body, pad)
+      res = ais_crc.decode(body, pad)
       res.update(tagblock)
       if keep_nmea:
         res['nmea'] = origline

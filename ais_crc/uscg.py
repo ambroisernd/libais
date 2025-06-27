@@ -44,9 +44,9 @@ import re
 import six
 import six.moves.queue as Queue
 
-import ais
-from ais import util
-from ais import vdm
+import ais_crc
+from ais_crc import util
+from ais_crc import vdm
 
 logger = logging.getLogger('libais')
 

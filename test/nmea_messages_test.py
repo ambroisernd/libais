@@ -3,7 +3,7 @@
 import datetime
 import unittest
 
-from ais import nmea_messages
+from ais_crc import nmea_messages
 
 
 # TODO(schwehr): Test TimeUtc.

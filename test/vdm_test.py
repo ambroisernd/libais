@@ -4,7 +4,7 @@
 
 import unittest
 
-from ais import vdm
+from ais_crc import vdm
 import six
 
 

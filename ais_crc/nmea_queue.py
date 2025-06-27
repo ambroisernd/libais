@@ -3,10 +3,10 @@
 TODO(schwehr): Add support for decoding non-AIS NMEA messages (e.g. ZDA).
 """
 
-from ais import nmea
-from ais import tag_block
-from ais import uscg
-from ais import vdm
+from ais_crc import nmea
+from ais_crc import tag_block
+from ais_crc import uscg
+from ais_crc import vdm
 import six.moves.queue as Queue
 
 

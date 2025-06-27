@@ -7,7 +7,7 @@ import logging
 import pprint
 import sys
 
-from ais import nmea_queue
+from ais_crc import nmea_queue
 
 logger = logging.getLogger('libais')
 

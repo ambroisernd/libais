@@ -2,7 +2,7 @@
 
 """Test the top level decoders with a single message each."""
 
-import ais
+import ais_crc
 import unittest
 from . import test_data
 import sys

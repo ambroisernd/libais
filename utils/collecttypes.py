@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 
-import ais
+import ais_crc
 import sys
-import ais.compatibility.gpsd
-import ais.stream
+import ais_crc.compatibility.gpsd
+import ais_crc.stream
 
 args = {}
 files = []
@@ -26,7 +26,7 @@ Collects one message of each type.
     sys.exit(0)
 
 types = set()
-for msg in ais.stream.decode(sys.stdin, keep_nmea=True, allowUnknown=True, allow_missing_timestamps=True):
+for msg in ais_crc.stream.decode(sys.stdin, keep_nmea=True, allowUnknown=True, allow_missing_timestamps=True):
     if msg['id'] in types: continue
     types.add(msg['id'])
     sys.stdout.write(msg['nmea'])

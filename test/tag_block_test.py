@@ -3,7 +3,7 @@
 
 import unittest
 
-from ais import tag_block
+from ais_crc import tag_block
 
 
 # Large sequence of single sentence AIS messages in TAG block format.

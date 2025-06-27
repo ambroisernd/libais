@@ -1,6 +1,6 @@
 """A file-like interface to NMEA parsing.
 
->>> import ais
+>>> import ais_crc
 >>> import json
 >>> with ais.open('test/data/typeexamples.nmea') as src:
 ...     msg = next(src)
@@ -72,7 +72,7 @@ import sys
 
 import six
 
-import ais.nmea_queue
+import ais_crc.nmea_queue
 
 
 def open(name, mode='r', **kwargs):
@@ -123,7 +123,7 @@ class NmeaFile(object):
     """
 
     self._fobj = fobj
-    self._queue = ais.nmea_queue.NmeaQueue()
+    self._queue = ais_crc.nmea_queue.NmeaQueue()
 
   @property
   def closed(self):

@@ -3,7 +3,7 @@
 
 import unittest
 
-from ais import nmea
+from ais_crc import nmea
 
 
 class ChecksumTest(unittest.TestCase):

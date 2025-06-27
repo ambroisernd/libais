@@ -34,7 +34,7 @@ import logging
 import math
 import re
 
-from ais import util
+from ais_crc import util
 
 logger = logging.getLogger('libais')
 

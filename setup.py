@@ -12,7 +12,7 @@ with open('README.md') as f:
     readme = f.read()
 
 
-with open(os.path.join('ais', '__init__.py')) as f:
+with open(os.path.join('ais_crc', '__init__.py')) as f:
   for line in f:
     if line.strip().startswith('__version__'):
       # Get version from line but leave as str: __version__ = "0.16" -> 0.16
@@ -73,13 +73,13 @@ tests_require = [
 ]
 
 setup(
-  name='libais',
+  name='libais_crc',
   version=VERSION,
-  description='Automatic Identification System decoding - ship tracking',
+  description='AIS decoding with CRC enhancements',
   long_description=readme,
-  author='Kurt Schwehr',
-  author_email='schwehr@gmail.com',
-  url='https://github.com/schwehr/libais',
+  author='Ambroise Renaud',
+  author_email='ambroise.renaud@gmail.com',
+  url='https://github.com/ambroisernd/libais',
   license='Apache 2.0',
   classifiers=[
     'License :: OSI Approved :: Apache Software License',
@@ -103,7 +103,7 @@ setup(
   scripts=[os.path.join('bin', 'aisdecode')],
   entry_points={
     'console_scripts': [
-      'libais_stats=ais.stats:main',
+      'libais_crc_stats=ais_crc.stats:main',  # anciennement 'libais_stats'
     ]
   },
 

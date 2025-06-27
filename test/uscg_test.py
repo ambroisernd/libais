@@ -2,7 +2,7 @@
 
 import unittest
 
-from ais import uscg
+from ais_crc import uscg
 
 
 METADATA_TYPES = r"""

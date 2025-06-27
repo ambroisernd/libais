@@ -18,11 +18,11 @@ import re
 import six
 import six.moves.queue as Queue
 
-import ais
-from ais import nmea
-from ais import nmea_messages
-from ais import util
-from ais import vdm
+import ais_crc
+from ais_crc import nmea
+from ais_crc import nmea_messages
+from ais_crc import util
+from ais_crc import vdm
 
 logger = logging.getLogger('libais')
 

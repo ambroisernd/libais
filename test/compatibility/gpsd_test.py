@@ -2,9 +2,9 @@
 
 """Tests for ais.compatibility.gpsd."""
 
-import ais
-import ais.compatibility.gpsd
-import ais.stream
+import ais_crc
+import ais_crc.compatibility.gpsd
+import ais_crc.stream
 
 import unittest
 import json

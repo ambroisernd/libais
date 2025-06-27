@@ -7,9 +7,9 @@ import pytest
 import six
 from six.moves import StringIO
 
-import ais
-from ais import nmea
-from ais import nmea_queue
+import ais_crc
+from ais_crc import nmea
+from ais_crc import nmea_queue
 
 BARE_NMEA = """
 # pylint: disable=line-too-long

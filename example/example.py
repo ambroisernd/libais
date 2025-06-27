@@ -1,6 +1,6 @@
 import argparse
 import sys
-import ais.stream
+import ais_crc.stream
     
 def main():
     # Get command line arguments
@@ -15,7 +15,7 @@ def main():
     out=sys.stdout
 
     with open(f_in) as f:
-    	for msg in ais.stream.decode(f):
+    	for msg in ais_crc.stream.decode(f):
     	    out.write(str(msg))
     	    out.write('\n')
     	    out.write('\n')
