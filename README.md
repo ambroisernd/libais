@@ -63,9 +63,24 @@ except KeyError:
 ---
 
 ## Notes
-- Make sure you are using the correct Python version (e.g., Python 3.12).
 - If you are working inside a virtual environment (`venv`), activate it first.
-- Avoid using `python setup.py install`, as it is deprecated and no longer supported.
+
+### 🛠️ Fixing `GLIBCXX_3.4.32 not found` Error (Conda)
+
+If you encounter the following error when importing a compiled Python module:
+
+```
+ImportError: version `GLIBCXX_3.4.32' not found in libstdc++.so.6
+```
+
+This means your environment's `libstdc++` is too old. To fix it:
+
+#### ✅ Solution (via Conda)
+Install an updated C++ runtime from `conda-forge`:
+
+```bash
+conda install -c conda-forge libstdcxx-ng
+```
 
 
 ## Usage/Examples
