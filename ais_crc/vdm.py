@@ -172,8 +172,8 @@ class BareQueue(Queue.Queue):
       body = match['body']
       fill_bits = int(match['fill_bits'])
       try:
-        decoded = ais.decode(body, fill_bits)
-      except ais.DecodeError as error:
+        decoded = ais_crc.decode(body, fill_bits)
+      except ais_crc.DecodeError as error:
         logger.error(
             'Unable to decode message: %s\n  %d %s', error, line_num, line)
         return
@@ -222,8 +222,8 @@ class BareQueue(Queue.Queue):
     body = ''.join([match['body'] for match in entry['matches']])
     fill_bits = int(entry['matches'][-1]['fill_bits'])
     try:
-      decoded = ais.decode(body, fill_bits)
-    except ais.DecodeError as error:
+      decoded = ais_crc.decode(body, fill_bits)
+    except ais_crc.DecodeError as error:
       logger.error(
           'Unable to decode message: %s\n%s', error, entry)
       return
