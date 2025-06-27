@@ -30,11 +30,11 @@ known_problems = {
 class SingleMessageTestsTest(unittest.TestCase):
 
   def setUp(self):
-    self.mangle = ais.compatibility.gpsd.Mangler()
+    self.mangle = ais_crc.compatibility.gpsd.Mangler()
 
   def testMsg1(self):
     fields = '!AIVDM,1,1,,B,169A91O005KbT4gUoUl9d;5j0D0U,0*2D'.split(',')
-    decoded = ais.decode(fields[5], int(fields[6][0]))
+    decoded = ais_crc.decode(fields[5], int(fields[6][0]))
     mangled = self.mangle(decoded)
     expected = {
         'type': 1,
@@ -107,8 +107,8 @@ class StreamingTest(unittest.TestCase):
 
     def Libais():
       with open(nmea_name) as f:
-        for msg in ais.stream.decode(f):
-          yield ais.compatibility.gpsd.mangle(msg)
+        for msg in ais_crc.stream.decode(f):
+          yield ais_crc.compatibility.gpsd.mangle(msg)
 
     g = iter(Json())
     a = iter(Libais())
@@ -173,8 +173,8 @@ class TestActualGPSDCompatibility(unittest.TestCase):
 
       def Libais():
         with open(nmea_name) as f:
-          for msg in ais.stream.decode(f):
-            yield ais.compatibility.gpsd.mangle(msg)
+          for msg in ais_crc.stream.decode(f):
+            yield ais_crc.compatibility.gpsd.mangle(msg)
 
       g = iter(Gpsd())
       a = iter(Libais())

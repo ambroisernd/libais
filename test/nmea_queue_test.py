@@ -290,7 +290,7 @@ def test_NmeaFile_against_queue(nmea):
         expected.append(msg)
         msg = queue.GetOrNone()
 
-    with contextlib.closing(StringIO(nmea)) as f, ais.open(f) as src:
+    with contextlib.closing(StringIO(nmea)) as f, ais_crc.open(f) as src:
         actual = list(src)
 
     for e, a in zip(expected, actual):
