@@ -2,7 +2,7 @@
 
 >>> import ais_crc
 >>> import json
->>> with ais.open('test/data/typeexamples.nmea') as src:
+>>> with ais_crc.open('test/data/typeexamples.nmea') as src:
 ...     msg = next(src)
 ...     print(json.dumps(next(msg), indent=4, sort_keys=True))
 {

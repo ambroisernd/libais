@@ -201,8 +201,8 @@ def DecodeTagSingle(tag_block_message):
   body = match['body']
   fill_bits = int(match['fill_bits'])
   try:
-    decoded = ais.decode(body, fill_bits)
-  except ais.DecodeError as error:
+    decoded = ais_crc.decode(body, fill_bits)
+  except ais_crc.DecodeError as error:
     logger.error('Unable to decode: %s', error)
     return
 
