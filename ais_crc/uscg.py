@@ -152,8 +152,8 @@ class UscgQueue(Queue.Queue):
       body = match['body']
       fill_bits = int(match['fill_bits'])
       try:
-        decoded = ais.decode(body, fill_bits)
-      except ais.DecodeError as error:
+        decoded = ais_crc.decode(body, fill_bits)
+      except ais_crc.DecodeError as error:
         logger.error(
             'Unable to decode message: %s\n  %d %s', error, self.line_num, line)
         return
